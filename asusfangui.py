@@ -72,7 +72,7 @@ class MainWindow(QMainWindow):
             if fan_speed > 1000:
                 dial.setValue(int(fan_speed / (8000 / 100)) if fan_speed < 7000 else 50)
             else:
-                dial.setSpeed(50)
+                dial.setValue(50)
 
             self.fan_labels.append(label)
             self.fan_dials.append(dial)
@@ -126,7 +126,7 @@ class MainWindow(QMainWindow):
             self.temp_labels[sensor].setText(f"{sensor}: {temp} °C")
 
 if __name__ == "__main__":
-    dll_path = os.path.join(os.path.dirname(sys.argv[0]), "AsusWinIO64.dll")
+    dll_path = os.path.abspath("AsusWinIO64.dll")
     asus_dll = ctypes.WinDLL(dll_path)
     app = QApplication(sys.argv)
     app.setStyleSheet(qdarkstyle.load_stylesheet_pyqt6())  # Тёмная тема

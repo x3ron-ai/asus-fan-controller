@@ -1,5 +1,5 @@
 # asus-fan-controller  
-Fan controller for ASUS laptops  
+Fan controller for ASUS laptops
 
 ## 🖥️ Supported Platform  
 ✔ Windows  
